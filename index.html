@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de Login</title>
+    <style>
+        /* Definir o estilo da tela de login */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url('img/wp7185806-1920x1080-aesthetic-wallpapers.jpg'); /* Altere para o caminho da sua imagem */
+            background-size: cover; /* Garante que a imagem cubra toda a tela */
+            background-position: center;
+            background-attachment: fixed; /* Faz com que a imagem fique fixa ao rolar */
+        }
+
+        .login-container {
+            background-color: rgba(0, 0, 0, 0.6); /* Fundo semitransparente para a área de login */
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            width: 90%; /* Tornar o formulário responsivo */
+            max-width: 400px; /* Largura máxima */
+            color: #fff;
+            text-align: center;
+            box-sizing: border-box; /* Adiciona o padding no cálculo da largura */
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: none;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #e2005e;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #ff32bbd0;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        /* Responsividade para telas menores */
+        @media (max-width: 600px) {
+            .login-container {
+                padding: 20px;
+            }
+
+            input, button {
+                font-size: 14px;
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login 🔒❤️ </h2>
+        <form id="loginForm">
+            <input type="text" id="username" placeholder="Usuário" required>
+            <input type="password" id="password" placeholder="Senha" required>
+            <button type="submit">Entrar</button>
+            <p class="error" id="errorMessage"></p>
+        </form>
+    </div>
+
+    <script>
+        const form = document.getElementById('loginForm');
+        const errorMessage = document.getElementById('errorMessage');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Credenciais predefinidas
+            const predefinedUsername = 'Heloa';
+            const predefinedPassword = 'Heloa123';
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Verifica se o login e senha estão corretos
+            if (username === predefinedUsername && password === predefinedPassword) {
+                // Redireciona para o site desejado
+                window.location.href = 'https://sites.google.com/view/helolomyygirl/in%C3%ADcio';
+            } else {
+                // Exibe mensagem de erro
+                errorMessage.textContent = 'Usuário ou senha incorretos.';
+            }
+        });
+    </script>
+</body>
+</html>
